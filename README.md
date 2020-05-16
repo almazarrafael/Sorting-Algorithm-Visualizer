@@ -23,5 +23,7 @@ Sort visualizer through Python with PyQt5 GUI
 I've been wanting to make this project for a long time now and tried to dip my feet into the world of GUI building. I first started with Tkinter for python and managed to visualize two sorts. The issue with the way I did was that it didn't have any user input at all and the sorts would visualize one after the other. It also pre-generated a random array whenever it starts and would just exit once it's done sorting. I tried a different approach by using PyQt for GUI which allowed me to use QtDesigner in order to design and flesh out the GUI then I just programmed the wanted behavior afterwards. I learned a lot about what goes into building GUIs and things that came with it such as signals from user input.
 
 ## images
-
-![GUI](https://cdn.discordapp.com/attachments/563284597488615434/711038707875971073/unknown.png)
+v2
+![v2GUI](https://cdn.discordapp.com/attachments/563284597488615434/711038707875971073/unknown.png)
+v1
+![v1GUI](https://cdn.discordapp.com/attachments/563284597488615434/711039035015168070/unknown.png)
