@@ -24,6 +24,9 @@ I've been wanting to make this project for a long time now and tried to dip my f
 
 ## images
 v2
+
 ![v2GUI](https://cdn.discordapp.com/attachments/563284597488615434/711038707875971073/unknown.png)
+
 v1
+
 ![v1GUI](https://cdn.discordapp.com/attachments/563284597488615434/711039035015168070/unknown.png)
