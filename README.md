@@ -17,10 +17,11 @@ Sort visualizer through Python with PyQt5 GUI
 3. QtDesigner.
 4. General GUI design ideas.
 5. Better understanding of sorting algorithms.
+6. Some CSS.
 
 ## notes
 
-I've been wanting to make this project for a long time now and tried to dip my feet into the world of GUI building. I first started with Tkinter for python and managed to visualize two sorts. The issue with the way I did was that it didn't have any user input at all and the sorts would visualize one after the other. It also pre-generated a random array whenever it starts and would just exit once it's done sorting. I tried a different approach by using PyQt for GUI which allowed me to use QtDesigner in order to design and flesh out the GUI then I just programmed the wanted behavior afterwards. I learned a lot about what goes into building GUIs and things that came with it such as signals from user input.
+I've been wanting to make this project for a long time now and tried to dip my feet into the world of GUI building. I first started with Tkinter for python and managed to visualize two sorts. The issue with the way I did was that it didn't have any user input at all and the sorts would visualize one after the other. It also pre-generated a random array whenever it starts and would just exit once it's done sorting. I tried a different approach by using PyQt for GUI which allowed me to use QtDesigner in order to design and flesh out the GUI then I just programmed the wanted behavior afterwards. I learned a lot about what goes into building GUIs and things that came with it such as signals from user input. I also learned a little CSS in order to make the progress bars look the way I wanted to.
 
 ## images
 v2
