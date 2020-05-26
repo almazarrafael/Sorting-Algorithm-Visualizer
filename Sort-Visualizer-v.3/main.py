@@ -2116,6 +2116,7 @@ class Ui_MainWindow(object):
         self.pushButton_5.clicked.connect(self.shellSort)
         self.pushButton_8.clicked.connect(self.quickSortHelper)
         self.pushButton_10.clicked.connect(self.mergeSortHelper)
+        self.pushButton_9.clicked.connect(self.heapSortHelper)
 
     def updateSpeed(self):
         self.numMS = self.horizontalSlider.value() * 0.001
@@ -2209,7 +2210,9 @@ class Ui_MainWindow(object):
         self.label_2.setText("Idle")
 
     def quickSortHelper(self):
+        self.label_2.setText("Quick Sorting...")
         self.quickSort(0, 99)
+        self.label_2.setText("Idle")
 
     def partition(self, low, high):
         barArr = [self.bar1, self.bar2, self.bar3, self.bar4, self.bar5, self.bar6, self.bar7, self.bar8, self.bar9, self.bar10, self.bar11, self.bar12, self.bar13, self.bar14, self.bar15, self.bar16, self.bar17, self.bar18, self.bar19, self.bar20, self.bar21, self.bar22, self.bar23, self.bar24, self.bar25, self.bar26, self.bar27, self.bar28, self.bar29, self.bar30, self.bar31, self.bar32, self.bar33, self.bar34, self.bar35, self.bar36, self.bar37, self.bar38, self.bar39, self.bar40, self.bar41, self.bar42, self.bar43, self.bar44, self.bar45, self.bar46, self.bar47, self.bar48, self.bar49, self.bar50, self.bar51, self.bar52, self.bar53, self.bar54, self.bar55, self.bar56, self.bar57, self.bar58, self.bar59, self.bar60, self.bar61, self.bar62, self.bar63, self.bar64, self.bar65, self.bar66, self.bar67, self.bar68, self.bar69, self.bar70, self.bar71, self.bar72, self.bar73, self.bar74, self.bar75, self.bar76, self.bar77, self.bar78, self.bar79, self.bar80, self.bar81, self.bar82, self.bar83, self.bar84, self.bar85, self.bar86, self.bar87, self.bar88, self.bar89, self.bar90, self.bar91, self.bar92, self.bar93, self.bar94, self.bar95, self.bar96, self.bar97, self.bar98, self.bar99, self.bar100]
@@ -2239,9 +2242,11 @@ class Ui_MainWindow(object):
             self.quickSort(pi+1, high) 
 
     def mergeSortHelper(self):
+        self.label_2.setText("Merge Sorting...")
         barArr = [self.bar1, self.bar2, self.bar3, self.bar4, self.bar5, self.bar6, self.bar7, self.bar8, self.bar9, self.bar10, self.bar11, self.bar12, self.bar13, self.bar14, self.bar15, self.bar16, self.bar17, self.bar18, self.bar19, self.bar20, self.bar21, self.bar22, self.bar23, self.bar24, self.bar25, self.bar26, self.bar27, self.bar28, self.bar29, self.bar30, self.bar31, self.bar32, self.bar33, self.bar34, self.bar35, self.bar36, self.bar37, self.bar38, self.bar39, self.bar40, self.bar41, self.bar42, self.bar43, self.bar44, self.bar45, self.bar46, self.bar47, self.bar48, self.bar49, self.bar50, self.bar51, self.bar52, self.bar53, self.bar54, self.bar55, self.bar56, self.bar57, self.bar58, self.bar59, self.bar60, self.bar61, self.bar62, self.bar63, self.bar64, self.bar65, self.bar66, self.bar67, self.bar68, self.bar69, self.bar70, self.bar71, self.bar72, self.bar73, self.bar74, self.bar75, self.bar76, self.bar77, self.bar78, self.bar79, self.bar80, self.bar81, self.bar82, self.bar83, self.bar84, self.bar85, self.bar86, self.bar87, self.bar88, self.bar89, self.bar90, self.bar91, self.bar92, self.bar93, self.bar94, self.bar95, self.bar96, self.bar97, self.bar98, self.bar99, self.bar100]
         arr = [barObj.value() for barObj in barArr]
         self.mergeSort(arr)
+        self.label_2.setText("Idle")
 
     def mergeSort(self, arr):
         barArr = [self.bar1, self.bar2, self.bar3, self.bar4, self.bar5, self.bar6, self.bar7, self.bar8, self.bar9, self.bar10, self.bar11, self.bar12, self.bar13, self.bar14, self.bar15, self.bar16, self.bar17, self.bar18, self.bar19, self.bar20, self.bar21, self.bar22, self.bar23, self.bar24, self.bar25, self.bar26, self.bar27, self.bar28, self.bar29, self.bar30, self.bar31, self.bar32, self.bar33, self.bar34, self.bar35, self.bar36, self.bar37, self.bar38, self.bar39, self.bar40, self.bar41, self.bar42, self.bar43, self.bar44, self.bar45, self.bar46, self.bar47, self.bar48, self.bar49, self.bar50, self.bar51, self.bar52, self.bar53, self.bar54, self.bar55, self.bar56, self.bar57, self.bar58, self.bar59, self.bar60, self.bar61, self.bar62, self.bar63, self.bar64, self.bar65, self.bar66, self.bar67, self.bar68, self.bar69, self.bar70, self.bar71, self.bar72, self.bar73, self.bar74, self.bar75, self.bar76, self.bar77, self.bar78, self.bar79, self.bar80, self.bar81, self.bar82, self.bar83, self.bar84, self.bar85, self.bar86, self.bar87, self.bar88, self.bar89, self.bar90, self.bar91, self.bar92, self.bar93, self.bar94, self.bar95, self.bar96, self.bar97, self.bar98, self.bar99, self.bar100]
@@ -2277,6 +2282,41 @@ class Ui_MainWindow(object):
                 arr[k] = R[j] 
                 j+=1
                 k+=1 
+
+    def heapSortHelper(self):
+        self.label_2.setText("Heap Sorting...")
+        barArr = [self.bar1, self.bar2, self.bar3, self.bar4, self.bar5, self.bar6, self.bar7, self.bar8, self.bar9, self.bar10, self.bar11, self.bar12, self.bar13, self.bar14, self.bar15, self.bar16, self.bar17, self.bar18, self.bar19, self.bar20, self.bar21, self.bar22, self.bar23, self.bar24, self.bar25, self.bar26, self.bar27, self.bar28, self.bar29, self.bar30, self.bar31, self.bar32, self.bar33, self.bar34, self.bar35, self.bar36, self.bar37, self.bar38, self.bar39, self.bar40, self.bar41, self.bar42, self.bar43, self.bar44, self.bar45, self.bar46, self.bar47, self.bar48, self.bar49, self.bar50, self.bar51, self.bar52, self.bar53, self.bar54, self.bar55, self.bar56, self.bar57, self.bar58, self.bar59, self.bar60, self.bar61, self.bar62, self.bar63, self.bar64, self.bar65, self.bar66, self.bar67, self.bar68, self.bar69, self.bar70, self.bar71, self.bar72, self.bar73, self.bar74, self.bar75, self.bar76, self.bar77, self.bar78, self.bar79, self.bar80, self.bar81, self.bar82, self.bar83, self.bar84, self.bar85, self.bar86, self.bar87, self.bar88, self.bar89, self.bar90, self.bar91, self.bar92, self.bar93, self.bar94, self.bar95, self.bar96, self.bar97, self.bar98, self.bar99, self.bar100]
+        arr = [barObj.value() for barObj in barArr]
+        self.heapSort(arr)
+        self.label_2.setText("Idle")
+
+    def heapify(self, arr, n, i):
+        barArr = [self.bar1, self.bar2, self.bar3, self.bar4, self.bar5, self.bar6, self.bar7, self.bar8, self.bar9, self.bar10, self.bar11, self.bar12, self.bar13, self.bar14, self.bar15, self.bar16, self.bar17, self.bar18, self.bar19, self.bar20, self.bar21, self.bar22, self.bar23, self.bar24, self.bar25, self.bar26, self.bar27, self.bar28, self.bar29, self.bar30, self.bar31, self.bar32, self.bar33, self.bar34, self.bar35, self.bar36, self.bar37, self.bar38, self.bar39, self.bar40, self.bar41, self.bar42, self.bar43, self.bar44, self.bar45, self.bar46, self.bar47, self.bar48, self.bar49, self.bar50, self.bar51, self.bar52, self.bar53, self.bar54, self.bar55, self.bar56, self.bar57, self.bar58, self.bar59, self.bar60, self.bar61, self.bar62, self.bar63, self.bar64, self.bar65, self.bar66, self.bar67, self.bar68, self.bar69, self.bar70, self.bar71, self.bar72, self.bar73, self.bar74, self.bar75, self.bar76, self.bar77, self.bar78, self.bar79, self.bar80, self.bar81, self.bar82, self.bar83, self.bar84, self.bar85, self.bar86, self.bar87, self.bar88, self.bar89, self.bar90, self.bar91, self.bar92, self.bar93, self.bar94, self.bar95, self.bar96, self.bar97, self.bar98, self.bar99, self.bar100]
+        largest = i 
+        l = 2 * i + 1
+        r = 2 * i + 2
+        if l < n and arr[i] < arr[l]: 
+            largest = l
+        if r < n and arr[largest] < arr[r]: 
+            largest = r 
+        if largest != i:
+            time.sleep(self.numMS)
+            barArr[i].setValue(arr[largest])
+            barArr[largest].setValue(arr[i])
+            arr[i],arr[largest] = arr[largest],arr[i]
+            self.heapify(arr, n, largest) 
+  
+    def heapSort(self, arr):
+        barArr = [self.bar1, self.bar2, self.bar3, self.bar4, self.bar5, self.bar6, self.bar7, self.bar8, self.bar9, self.bar10, self.bar11, self.bar12, self.bar13, self.bar14, self.bar15, self.bar16, self.bar17, self.bar18, self.bar19, self.bar20, self.bar21, self.bar22, self.bar23, self.bar24, self.bar25, self.bar26, self.bar27, self.bar28, self.bar29, self.bar30, self.bar31, self.bar32, self.bar33, self.bar34, self.bar35, self.bar36, self.bar37, self.bar38, self.bar39, self.bar40, self.bar41, self.bar42, self.bar43, self.bar44, self.bar45, self.bar46, self.bar47, self.bar48, self.bar49, self.bar50, self.bar51, self.bar52, self.bar53, self.bar54, self.bar55, self.bar56, self.bar57, self.bar58, self.bar59, self.bar60, self.bar61, self.bar62, self.bar63, self.bar64, self.bar65, self.bar66, self.bar67, self.bar68, self.bar69, self.bar70, self.bar71, self.bar72, self.bar73, self.bar74, self.bar75, self.bar76, self.bar77, self.bar78, self.bar79, self.bar80, self.bar81, self.bar82, self.bar83, self.bar84, self.bar85, self.bar86, self.bar87, self.bar88, self.bar89, self.bar90, self.bar91, self.bar92, self.bar93, self.bar94, self.bar95, self.bar96, self.bar97, self.bar98, self.bar99, self.bar100]
+        n = len(arr) 
+        for i in range(n // 2 - 1, -1, -1): 
+            self.heapify(arr, n, i) 
+        for i in range(n-1, 0, -1):
+            time.sleep(self.numMS)
+            barArr[i].setValue(arr[0])
+            barArr[0].setValue(arr[i])
+            arr[i], arr[0] = arr[0], arr[i]
+            self.heapify(arr, i, 0)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
