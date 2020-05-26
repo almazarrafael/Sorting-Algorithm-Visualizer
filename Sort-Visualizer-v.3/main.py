@@ -2117,6 +2117,7 @@ class Ui_MainWindow(object):
         self.pushButton_8.clicked.connect(self.quickSortHelper)
         self.pushButton_10.clicked.connect(self.mergeSortHelper)
         self.pushButton_9.clicked.connect(self.heapSortHelper)
+        self.pushButton_7.clicked.connect(self.radixSortHelper)
 
     def updateSpeed(self):
         self.numMS = self.horizontalSlider.value() * 0.001
@@ -2317,6 +2318,41 @@ class Ui_MainWindow(object):
             barArr[0].setValue(arr[i])
             arr[i], arr[0] = arr[0], arr[i]
             self.heapify(arr, i, 0)
+
+    def radixSortHelper(self):
+        self.label_2.setText("Radix Sorting...")
+        barArr = [self.bar1, self.bar2, self.bar3, self.bar4, self.bar5, self.bar6, self.bar7, self.bar8, self.bar9, self.bar10, self.bar11, self.bar12, self.bar13, self.bar14, self.bar15, self.bar16, self.bar17, self.bar18, self.bar19, self.bar20, self.bar21, self.bar22, self.bar23, self.bar24, self.bar25, self.bar26, self.bar27, self.bar28, self.bar29, self.bar30, self.bar31, self.bar32, self.bar33, self.bar34, self.bar35, self.bar36, self.bar37, self.bar38, self.bar39, self.bar40, self.bar41, self.bar42, self.bar43, self.bar44, self.bar45, self.bar46, self.bar47, self.bar48, self.bar49, self.bar50, self.bar51, self.bar52, self.bar53, self.bar54, self.bar55, self.bar56, self.bar57, self.bar58, self.bar59, self.bar60, self.bar61, self.bar62, self.bar63, self.bar64, self.bar65, self.bar66, self.bar67, self.bar68, self.bar69, self.bar70, self.bar71, self.bar72, self.bar73, self.bar74, self.bar75, self.bar76, self.bar77, self.bar78, self.bar79, self.bar80, self.bar81, self.bar82, self.bar83, self.bar84, self.bar85, self.bar86, self.bar87, self.bar88, self.bar89, self.bar90, self.bar91, self.bar92, self.bar93, self.bar94, self.bar95, self.bar96, self.bar97, self.bar98, self.bar99, self.bar100]
+        arr = [barObj.value() for barObj in barArr]
+        self.radixSort(arr)
+        self.label_2.setText("Idle")
+
+    def countingSort(self, arr, exp1):
+        barArr = [self.bar1, self.bar2, self.bar3, self.bar4, self.bar5, self.bar6, self.bar7, self.bar8, self.bar9, self.bar10, self.bar11, self.bar12, self.bar13, self.bar14, self.bar15, self.bar16, self.bar17, self.bar18, self.bar19, self.bar20, self.bar21, self.bar22, self.bar23, self.bar24, self.bar25, self.bar26, self.bar27, self.bar28, self.bar29, self.bar30, self.bar31, self.bar32, self.bar33, self.bar34, self.bar35, self.bar36, self.bar37, self.bar38, self.bar39, self.bar40, self.bar41, self.bar42, self.bar43, self.bar44, self.bar45, self.bar46, self.bar47, self.bar48, self.bar49, self.bar50, self.bar51, self.bar52, self.bar53, self.bar54, self.bar55, self.bar56, self.bar57, self.bar58, self.bar59, self.bar60, self.bar61, self.bar62, self.bar63, self.bar64, self.bar65, self.bar66, self.bar67, self.bar68, self.bar69, self.bar70, self.bar71, self.bar72, self.bar73, self.bar74, self.bar75, self.bar76, self.bar77, self.bar78, self.bar79, self.bar80, self.bar81, self.bar82, self.bar83, self.bar84, self.bar85, self.bar86, self.bar87, self.bar88, self.bar89, self.bar90, self.bar91, self.bar92, self.bar93, self.bar94, self.bar95, self.bar96, self.bar97, self.bar98, self.bar99, self.bar100]
+        n = len(arr)
+        output = [0] * (n) 
+        count = [0] * (10) 
+        for i in range(0, n): 
+            index = (arr[i]/exp1) 
+            count[int(index % 10)] += 1
+        for i in range(1,10): 
+            count[i] += count[i-1] 
+        i = n-1
+        while i>=0: 
+            index = (arr[i]/exp1) 
+            output[count[int((index) % 10)] - 1] = arr[i] 
+            count[int((index)%10)] -= 1
+            i -= 1
+        i = 0
+        for i in range(len(arr)):
+            time.sleep(self.numMS)
+            barArr[i].setValue(output[i])
+            arr[i] = output[i]
+
+    def radixSort(self, arr):    
+        exp = 1
+        for i in range(3):
+            self.countingSort(arr,exp) 
+            exp *= 10
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
